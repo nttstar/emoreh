@@ -5,16 +5,17 @@ from splinter import Browser
 import time
 import datetime
 import os
-from pyvirtualdisplay import Display
+#from pyvirtualdisplay import Display
 from datetime import datetime
 
 non_display = True
+uuid = '0fab28f4-9319-4f53-8176-7e768035fed7'
 
 
 display = None
-if non_display:
-    display = Display(visible=0, size=(1024, 768))
-    display.start()
+#if non_display:
+#    display = Display(visible=0, size=(1024, 768))
+#    display.start()
 
 
 url = "http://jiaju.sina.com.cn/zt/jjhyzpb/"
@@ -51,10 +52,10 @@ while True:
                 print("non box")
         except Exception, e:
             print e
-    aa = os.system('nmcli con down uuid 00962828-73a9-4073-8f2f-6045c0d262f1')
+    aa = os.system('nmcli con down uuid '+uuid)
     time.sleep(2)
-    aa = os.system('nmcli con up uuid 00962828-73a9-4073-8f2f-6045c0d262f1')
+    aa = os.system('nmcli con up uuid '+uuid)
     time.sleep(1)
 
-if non_display:
-    display.stop()
+#if non_display:
+#    display.stop()
